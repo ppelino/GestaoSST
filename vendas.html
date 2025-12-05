@@ -1,0 +1,360 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <title>DataInsight SST Suite — Página Oficial de Vendas</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <link rel="stylesheet" href="assets/branding.css" />
+
+  <style>
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      margin: 0;
+      background: #f3f4f6;
+      color: #111827;
+    }
+
+    /* NAVBAR */
+    .nav-vendas {
+      background: #0f172a;
+      color: #f9fafb;
+      padding: 12px 0;
+      box-shadow: 0 4px 15px rgba(15, 23, 42, 0.35);
+    }
+
+    .nav-wrap {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 16px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .nav-brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .nav-brand img {
+      width: 42px;
+      height: 42px;
+      border-radius: 999px;
+      object-fit: cover;
+    }
+
+    .nav-brand span {
+      font-weight: 700;
+      font-size: 1rem;
+      letter-spacing: .03em;
+    }
+
+    .nav-mini {
+      font-size: 0.8rem;
+      opacity: 0.85;
+    }
+
+    /* CONTAINER */
+    .page {
+      max-width: 1100px;
+      margin: 24px auto 48px;
+      padding: 0 16px;
+    }
+
+    /* HERO */
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+      gap: 24px;
+      margin-bottom: 32px;
+      align-items: center;
+    }
+
+    .hero-card {
+      background: #ffffff;
+      border-radius: 18px;
+      padding: 22px;
+      box-shadow: 0 18px 45px rgba(15, 23, 42, 0.16);
+      border: 1px solid rgba(148, 163, 184, 0.25);
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 4px 10px;
+      border-radius: 999px;
+      background: #dbeafe;
+      color: #1e40af;
+      font-size: 0.78rem;
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+
+    .hero-title {
+      font-size: 1.7rem;
+      margin: 4px 0 6px;
+    }
+
+    .hero-sub {
+      font-size: 0.96rem;
+      color: #4b5563;
+      margin-bottom: 14px;
+      line-height: 1.4;
+    }
+
+    .hero-list {
+      list-style: none;
+      padding-left: 0;
+      margin: 0 0 16px;
+      font-size: 0.9rem;
+      color: #374151;
+    }
+
+    .hero-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+      margin-bottom: 6px;
+    }
+
+    .hero-list li span {
+      color: #16a34a;
+      font-weight: 700;
+    }
+
+    .preco-box {
+      display: flex;
+      align-items: baseline;
+      gap: 10px;
+      margin-bottom: 12px;
+    }
+
+    .preco-principal {
+      font-size: 1.6rem;
+      font-weight: 700;
+    }
+
+    .preco-detalhe {
+      font-size: 0.9rem;
+      color: #6b7280;
+    }
+
+    .cta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      align-items: center;
+      margin-bottom: 8px;
+    }
+
+    .btn-cta {
+      border-radius: 999px;
+      padding: 10px 20px;
+      cursor: pointer;
+      font-size: 0.95rem;
+      font-weight: 600;
+      background: #16a34a;
+      color: #ffffff;
+      text-decoration: none;
+      box-shadow: 0 12px 25px rgba(22, 163, 74, 0.45);
+      transition: .12s ease;
+    }
+
+    .btn-cta:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 18px 32px rgba(22,163,74,0.6);
+    }
+
+    .btn-sec {
+      border-radius: 999px;
+      padding: 8px 14px;
+      background: #f3f4ff;
+      color: #1d4ed8;
+      border: 1px solid #e5e7eb;
+      text-decoration: none;
+    }
+
+    .hero-garantia {
+      font-size: 0.8rem;
+      color: #6b7280;
+    }
+
+    /* BLOCO DO PRINT */
+    .hero-print {
+      background: #0b1120;
+      border-radius: 18px;
+      padding: 16px;
+      color: #e5e7eb;
+      box-shadow: 0 18px 45px rgba(15,23,42,0.6);
+    }
+
+    .hero-print-header {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 10px;
+    }
+
+    .hero-print-header img {
+      width: 38px;
+      height: 38px;
+      border-radius: 10px;
+      object-fit: cover;
+    }
+
+    .hero-print-title {
+      font-size: 0.95rem;
+      font-weight: 600;
+    }
+
+    .hero-print-sub {
+      font-size: 0.8rem;
+      color: #9ca3af;
+    }
+
+    .hero-print-main-img {
+      margin-top: 10px;
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid rgba(148,163,184,0.35);
+    }
+
+    .hero-print-main-img img {
+      width: 100%;
+      display: block;
+    }
+
+    /* SECTION DEFAULT */
+    .section {
+      margin-top: 32px;
+    }
+
+    .section h2 {
+      font-size: 1.25rem;
+      margin-bottom: 8px;
+    }
+
+    .section p {
+      font-size: 0.92rem;
+      color: #4b5563;
+      max-width: 860px;
+    }
+
+    /* FOOTER CTA */
+    .footer-cta {
+      margin-top: 32px;
+      background: #0f172a;
+      border-radius: 18px;
+      padding: 20px;
+      color: #e5e7eb;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+  </style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<header class="nav-vendas">
+  <div class="nav-wrap">
+    <div class="nav-brand">
+      <img src="assets/datainsight.jpg" alt="Logo DataInsight SST" />
+      <div>
+        <span>DataInsight SST Suite</span>
+        <div class="nav-mini">Plataforma profissional de Segurança do Trabalho</div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main class="page">
+
+  <!-- HERO / DESTAQUE -->
+  <section class="hero">
+
+    <!-- CARD PRINCIPAL -->
+    <div class="hero-card">
+      <div class="badge">✅ Software + Ebook orientativo</div>
+
+      <h1 class="hero-title">Modernize a Gestão de SST com o DataInsight SST Suite</h1>
+
+      <p class="hero-sub">
+        Centralize PCMSO / ASO, NR-17, PGR / NR-01 e LTCAT em uma única plataforma com dashboards automáticos,
+        indicadores e relatórios profissionais.
+      </p>
+
+      <ul class="hero-list">
+        <li><span>•</span> Registros rápidos e dashboards inteligentes.</li>
+        <li><span>•</span> Ideal para engenheiros, técnicos, clínicas e consultorias.</li>
+        <li><span>•</span> Interface moderna e fácil, aprovada em campo.</li>
+      </ul>
+
+      <div class="preco-box">
+        <div class="preco-principal">R$ 200,00</div>
+        <div class="preco-detalhe">Pagamento seguro via Hotmart</div>
+      </div>
+
+      <div class="cta-row">
+        <a class="btn-cta" href="https://go.hotmart.com/V103285397M" target="_blank">💳 Comprar agora</a>
+        <a class="btn-sec" href="#como-funciona">Ver detalhes</a>
+      </div>
+
+      <div class="hero-garantia">🔒 Garantia de 7 dias Hotmart</div>
+    </div>
+
+    <!-- PRINT DO DASHBOARD -->
+    <aside class="hero-print">
+      <div class="hero-print-header">
+        <img src="assets/datainsight.jpg" alt="">
+        <div>
+          <div class="hero-print-title">Dashboard Inteligente</div>
+          <div class="hero-print-sub">Indicadores em tempo real por módulo</div>
+        </div>
+      </div>
+
+      <div class="hero-print-main-img">
+        <img src="assets/dashboardInteligente.png" alt="Dashboard do sistema DataInsight SST">
+      </div>
+    </aside>
+  </section>
+
+
+  <!-- SEÇÃO “COMO FUNCIONA” -->
+  <section id="como-funciona" class="section">
+    <h2>Como o DataInsight SST Suite funciona na prática?</h2>
+
+    <p>
+      O DataInsight SST Suite é uma plataforma completa que centraliza PCMSO / ASO, NR-17, PGR / NR-01 e LTCAT em um só lugar,
+      permitindo registrar funcionários, exames, avaliações ergonômicas, perigos, riscos e enquadramentos.
+      Tudo é automaticamente convertido em dashboards visuais e indicadores profissionais.
+    </p>
+
+    <p>
+      A plataforma é ideal para engenheiros de segurança, técnicos de SST, clínicas ocupacionais e consultorias que precisam
+      padronizar processos, economizar tempo e entregar relatórios modernos para seus clientes — tudo com poucos cliques.
+    </p>
+  </section>
+
+
+  <!-- CTA FINAL -->
+  <section class="footer-cta">
+    <div>
+      <h3>Pronto para elevar sua gestão de SST?</h3>
+      <p>Comece agora com a suíte DataInsight SST e apresente dashboards profissionais para seus clientes.</p>
+    </div>
+
+    <a class="btn-cta" href="https://go.hotmart.com/V103285397M" target="_blank">
+      🚀 Comprar o DataInsight SST Suite
+    </a>
+  </section>
+
+</main>
+
+</body>
+</html>
